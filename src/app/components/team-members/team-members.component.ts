@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TeamMembersService } from '../../services/team-members.service';
-import { TeamMember, CommitteeMember } from '../../models/team-member.model';
+import { TeamMember, CommitteeMember, calculateAge } from '../../models/team-member.model';
 import { LogoComponent } from '../logo/logo.component';
 
 @Component({
@@ -16,4 +16,7 @@ export class TeamMembersComponent {
 
   teamMembers = this.teamMembersService.getTeamMembers();
   committeeMembers = this.teamMembersService.getCommitteeMembers();
+  
+  // Make calculateAge function available in template
+  calculateAge = calculateAge;
 }

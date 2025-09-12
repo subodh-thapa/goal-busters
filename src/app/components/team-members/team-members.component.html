@@ -1,92 +1,58 @@
-<!-- Page Header -->
-<section class="page-header">
+<!-- Compact Team Page -->
+<section class="team-page">
   <div class="container">
-    <div class="page-header-logo">
-      <app-logo size="medium"></app-logo>
+    <!-- Compact Header -->
+    <div class="team-header">
+      <h1>Our Team</h1>
+      <div class="team-stats-inline">
+        <span class="stat-inline">{{ teamMembers().length }} Players</span>
+        <span class="stat-inline">{{ committeeMembers().length }} Board Members</span>
+        <span class="stat-inline">Est. 2012</span>
+      </div>
     </div>
-    <h1>Our Team</h1>
-    <p>Meet the players and organizing committee of Goal Busters</p>
-  </div>
-</section>
 
-<!-- Committee Members Section -->
-<section class="committee-section">
-  <div class="container">
-    <h2 class="section-title">Organizing Committee</h2>
-    <p class="section-subtitle">The dedicated individuals who make Goal Busters possible</p>
-    
-    <div class="committee-grid">
-      <div class="member-card committee-card" *ngFor="let member of committeeMembers()">
-        <div class="member-image">
-          <img [src]="member.imageUrl" [alt]="member.name" class="img-circle">
-        </div>
-        <div class="member-info">
-          <h3>{{ member.name }}</h3>
-          <p class="member-role">{{ member.role }}</p>
-          <p class="member-position">{{ member.position }}</p>
-          <div class="member-contact" *ngIf="member.email || member.phone">
-            <p *ngIf="member.email" class="contact-item">
-              <span class="contact-icon">📧</span>
-              <a [href]="'mailto:' + member.email">{{ member.email }}</a>
-            </p>
-            <p *ngIf="member.phone" class="contact-item">
-              <span class="contact-icon">📞</span>
-              <a [href]="'tel:' + member.phone">{{ member.phone }}</a>
-            </p>
+    <!-- Board Members Section -->
+    <section class="committee-section">
+      <div class="container">
+        <h2 class="section-title">Board Members</h2>
+        <p class="section-subtitle">The volunteers who make Goal Busters possible</p>
+        
+        <div class="committee-grid">
+          <div class="member-card committee-card" *ngFor="let member of committeeMembers()">
+            <div class="member-image">
+              <img [src]="member.imageUrl" [alt]="member.name" class="img-circle">
+            </div>
+            <div class="member-info">
+              <h3>{{ member.name }}</h3>
+              <p class="member-role" *ngIf="member.role">Role: {{ member.role }}</p>
+              <div class="member-contact" *ngIf="member.email || member.phone">
+                <p *ngIf="member.email" class="contact-item">
+                  <span class="contact-icon">📧</span>
+                  <a [href]="'mailto:' + member.email">{{ member.email }}</a>
+                </p>
+                <p *ngIf="member.phone" class="contact-item">
+                  <span class="contact-icon">📞</span>
+                  <a [href]="'tel:' + member.phone">{{ member.phone }}</a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Team Players Section -->
-<section class="players-section">
-  <div class="container">
-    <h2 class="section-title">Team Players</h2>
-    <p class="section-subtitle">Our talented players who represent Goal Busters on the field</p>
-    
-    <div class="players-grid">
-      <div class="member-card player-card" *ngFor="let member of teamMembers()">
-        <div class="member-image">
-          <img [src]="member.imageUrl" [alt]="member.name" class="img-circle">
-          <div class="jersey-number" *ngIf="member.jerseyNumber">
-            {{ member.jerseyNumber }}
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>{{ member.name }}</h3>
-          <p class="member-position">{{ member.position }}</p>
-          <div class="member-bio" *ngIf="member.bio">
-            <p>{{ member.bio }}</p>
+    <!-- Players Section -->
+    <section class="players-section">
+      <div class="container">
+        <h2 class="section-title">Our Players</h2>
+        <p class="section-subtitle">Our talented players who represent Goal Busters on the field</p>
+        
+        <div class="players-list-compact">
+          <div class="player-item-compact" *ngFor="let member of teamMembers()">
+            <span class="player-name-compact">{{ member.name }}</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Team Stats Section -->
-<section class="team-stats">
-  <div class="container">
-    <h2 class="section-title">Team Statistics</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">{{ teamMembers().length }}</div>
-        <div class="stat-label">Active Players</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">{{ committeeMembers().length }}</div>
-        <div class="stat-label">Committee Members</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">2020</div>
-        <div class="stat-label">Established</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Matches Played</div>
-      </div>
-    </div>
+    </section>
   </div>
 </section>
