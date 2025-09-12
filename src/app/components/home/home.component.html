@@ -1,0 +1,146 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <!-- <div class="hero-logo">
+        <app-logo size="large"></app-logo>
+      </div> -->
+      <h1>Welcome to Goal Busters</h1>
+      <p class="hero-subtitle">Your premier football club since 2020</p>
+      <p class="hero-description">
+        We are passionate about football, teamwork, and community. Join us as we strive for excellence on and off the field.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/team" class="btn btn-primary">Meet the Team</a>
+        <a routerLink="/gallery" class="btn btn-outline">View Gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Important Updates Section -->
+<section class="important-updates" *ngIf="importantUpdates().length > 0">
+  <div class="container">
+    <h2 class="section-title">Important Updates</h2>
+    <div class="updates-grid">
+      <div class="card update-card" *ngFor="let update of importantUpdates()">
+        <div class="card-header">
+          <h3>{{ update.title }}</h3>
+          <span class="badge badge-danger">Important</span>
+        </div>
+        <div class="card-body">
+          <p>{{ update.content }}</p>
+          <div class="update-meta">
+            <span class="text-muted">By {{ update.author }} • {{ update.publishDate | date:'MMM d, y' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Updates Section -->
+<section class="latest-updates">
+  <div class="container">
+    <h2 class="section-title">Latest News & Updates</h2>
+    <div class="updates-grid">
+      <div class="card update-card" *ngFor="let update of latestUpdates()">
+        <div class="card-header">
+          <h3>{{ update.title }}</h3>
+          <span class="badge" [ngClass]="'badge-' + (update.category === 'match' ? 'success' : update.category === 'training' ? 'primary' : 'secondary')">
+            {{ update.category | titlecase }}
+          </span>
+        </div>
+        <div class="card-body">
+          <p>{{ update.content }}</p>
+          <div class="update-meta">
+            <span class="text-muted">By {{ update.author }} • {{ update.publishDate | date:'MMM d, y' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors Section -->
+<section class="sponsors">
+  <div class="container">
+    <h2 class="section-title">Our Sponsors</h2>
+    <p class="section-subtitle">Thank you to our amazing sponsors who support our team</p>
+    
+    <!-- Platinum Sponsors -->
+    <div class="sponsor-tier" *ngIf="getSponsorsByTier('platinum')().length > 0">
+      <h3 class="tier-title">Platinum Sponsors</h3>
+      <div class="sponsors-grid">
+        <div class="sponsor-card" *ngFor="let sponsor of getSponsorsByTier('platinum')()">
+          <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
+          <h4>{{ sponsor.name }}</h4>
+          <p>{{ sponsor.description }}</p>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold Sponsors -->
+    <div class="sponsor-tier" *ngIf="getSponsorsByTier('gold')().length > 0">
+      <h3 class="tier-title">Gold Sponsors</h3>
+      <div class="sponsors-grid">
+        <div class="sponsor-card" *ngFor="let sponsor of getSponsorsByTier('gold')()">
+          <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
+          <h4>{{ sponsor.name }}</h4>
+          <p>{{ sponsor.description }}</p>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Silver & Bronze Sponsors -->
+    <div class="sponsor-tier" *ngIf="getSponsorsByTier('silver')().length > 0 || getSponsorsByTier('bronze')().length > 0">
+      <h3 class="tier-title">Community Partners</h3>
+      <div class="sponsors-grid">
+        <div class="sponsor-card" *ngFor="let sponsor of getSponsorsByTier('silver')()">
+          <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
+          <h4>{{ sponsor.name }}</h4>
+          <p>{{ sponsor.description }}</p>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+        </div>
+        <div class="sponsor-card" *ngFor="let sponsor of getSponsorsByTier('bronze')()">
+          <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
+          <h4>{{ sponsor.name }}</h4>
+          <p>{{ sponsor.description }}</p>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Media Section -->
+<section class="social-media">
+  <div class="container">
+    <h2 class="section-title">Follow Us</h2>
+    <p class="section-subtitle">Stay connected with Goal Busters on social media</p>
+    <div class="social-grid">
+      <a href="#" class="social-card facebook">
+        <div class="social-icon">📘</div>
+        <h3>Facebook</h3>
+        <p>Follow us for match updates and team news</p>
+      </a>
+      <a href="#" class="social-card instagram">
+        <div class="social-icon">📷</div>
+        <h3>Instagram</h3>
+        <p>See behind-the-scenes photos and videos</p>
+      </a>
+      <a href="#" class="social-card twitter">
+        <div class="social-icon">🐦</div>
+        <h3>Twitter</h3>
+        <p>Get real-time updates and match commentary</p>
+      </a>
+      <a href="#" class="social-card youtube">
+        <div class="social-icon">📺</div>
+        <h3>YouTube</h3>
+        <p>Watch match highlights and training videos</p>
+      </a>
+    </div>
+  </div>
+</section>

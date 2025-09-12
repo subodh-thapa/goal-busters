@@ -1,0 +1,49 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-logo">
+      <app-logo size="medium"></app-logo>
+    </div>
+    <h1>Admin Panel</h1>
+    <p>Manage team members, gallery, updates, and sponsors</p>
+  </div>
+</section>
+
+<!-- Admin Navigation -->
+<section class="admin-nav">
+  <div class="container">
+    <div class="nav-tabs">
+      <button 
+        class="nav-tab" 
+        [class.active]="activeTab() === 'team'"
+        (click)="setActiveTab('team')">
+        Team Members
+      </button>
+      <button 
+        class="nav-tab" 
+        [class.active]="activeTab() === 'gallery'"
+        (click)="setActiveTab('gallery')">
+        Gallery
+      </button>
+      <button 
+        class="nav-tab" 
+        [class.active]="activeTab() === 'updates'"
+        (click)="setActiveTab('updates')">
+        Updates
+      </button>
+      <button 
+        class="nav-tab" 
+        [class.active]="activeTab() === 'sponsors'"
+        (click)="setActiveTab('sponsors')">
+        Sponsors
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Admin Content -->
+<section class="admin-content">
+  <div class="container">
+    <p>Admin functionality will be implemented here...</p>
+  </div>
+</section>
