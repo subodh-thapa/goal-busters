@@ -604,6 +604,43 @@ body {
   background: var(--white);
 }
 
+/* Global Compact Header Styles */
+.compact-page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.compact-page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.compact-page-header p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.compact-page-header .header-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.compact-page-header .stat-inline {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 /* Compact Team Page Styles */
 .team-page {
   padding: 1rem 0;
@@ -801,6 +838,38 @@ body {
 
 @media (max-width: 480px) {
   .team-stats-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Responsive Design for Compact Headers */
+@media (max-width: 768px) {
+  .compact-page-header {
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .compact-page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .compact-page-header p {
+    font-size: 0.9rem;
+  }
+  
+  .compact-page-header .header-stats {
+    gap: 1rem;
+  }
+  
+  .compact-page-header .stat-inline {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .compact-page-header .header-stats {
     flex-direction: column;
     gap: 0.5rem;
   }
