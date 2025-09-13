@@ -72,6 +72,17 @@ export class TeamMembersService {
       imageUrl: 'assets/default_human_pic.jpg'
     },
     {
+      id: 'c6',
+      name: 'Purak  Khadka',
+      dateOfBirth: '1990-04-28',
+      position: 'Forward',
+      isCommittee: true,
+      role: 'Vice President',
+      email: this.generateEmail('Purak  Khadka'),
+      phone: '+1-555-0125',
+      imageUrl: 'assets/default_human_pic.jpg'
+    },
+    {
       id: 'c2',
       name: 'Suhang Subba',
       dateOfBirth: '1985-12-03',
@@ -80,7 +91,7 @@ export class TeamMembersService {
       role: 'Advisor',
       email: this.generateEmail('Suhang Subba'),
       phone: '+1-555-0124',
-      imageUrl: 'assets/default_human_pic.jpg'
+      imageUrl: 'assets/team_members/suhang_subba.jpeg'
     },
     {
       id: 'c3',
@@ -92,6 +103,28 @@ export class TeamMembersService {
       email: this.generateEmail('Parashar Poudyal'),
       phone: '+1-555-0125',
       imageUrl: 'assets/team_members/parashar.jpg'
+    },
+    {
+      id: 'c8',
+      name: 'Prajwol Pathak',
+      dateOfBirth: '1990-04-28',
+      position: 'Forward',
+      isCommittee: true,
+      role: 'Internal Tournament Coordinator',
+      email: this.generateEmail('Prajwol Pathak'),
+      phone: '+1-555-0125',
+      imageUrl: 'assets/team_members/prajwol_pathak.jpg'
+    },
+    {
+      id: 'c9',
+      name: 'Suhav Ranabhat',
+      dateOfBirth: '1990-04-28',
+      position: 'Forward',
+      isCommittee: true,
+      role: 'Treasurer',
+      email: this.generateEmail('Suhav Ranabhat'),
+      phone: '+1-555-0125',
+      imageUrl: 'assets/default_human_pic.jpg'
     },
     {
       id: 'c4',
@@ -116,17 +149,6 @@ export class TeamMembersService {
       imageUrl: 'assets/default_human_pic.jpg'
     },
     {
-      id: 'c6',
-      name: 'Purak  Khadka',
-      dateOfBirth: '1990-04-28',
-      position: 'Forward',
-      isCommittee: true,
-      role: 'Vice President',
-      email: this.generateEmail('Purak  Khadka'),
-      phone: '+1-555-0125',
-      imageUrl: 'assets/default_human_pic.jpg'
-    },
-    {
       id: 'c7',
       name: 'Subodh Thapa',
       dateOfBirth: '1990-04-28',
@@ -134,28 +156,6 @@ export class TeamMembersService {
       isCommittee: true,
       role: 'Internal Tournament Coordinator',
       email: this.generateEmail('Subodh Thapa'),
-      phone: '+1-555-0125',
-      imageUrl: 'assets/default_human_pic.jpg'
-    },
-    {
-      id: 'c8',
-      name: 'Prajwol Pathak',
-      dateOfBirth: '1990-04-28',
-      position: 'Forward',
-      isCommittee: true,
-      role: 'Internal Tournament Coordinator',
-      email: this.generateEmail('Prajwol Pathak'),
-      phone: '+1-555-0125',
-      imageUrl: 'assets/team_members/prajwol_pathak.jpg'
-    },
-    {
-      id: 'c9',
-      name: 'Binod Basnet',
-      dateOfBirth: '1990-04-28',
-      position: 'Forward',
-      isCommittee: true,
-      role: 'Advisor',
-      email: this.generateEmail('Binod Basnet'),
       phone: '+1-555-0125',
       imageUrl: 'assets/default_human_pic.jpg'
     }

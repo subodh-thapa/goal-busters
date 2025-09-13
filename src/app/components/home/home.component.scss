@@ -52,6 +52,59 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* Team Picture Section */
+.team-picture {
+  //padding: 1rem 0;
+  background-color: var(--white);
+}
+
+.team-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.team-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-cta {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.team-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+}
+
+.team-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 115, 85, 0.4);
+}
+
+.team-link i {
+  font-size: 1.2rem;
+}
+
 /* Section Styles */
 .section-title {
   font-size: 2.5rem;
@@ -65,7 +118,7 @@
   text-align: center;
   font-size: 1.125rem;
   color: var(--text-light);
-  margin-bottom: 3rem;
+  //margin-bottom: 3rem;
 }
 
 /* Updates Section */
@@ -117,8 +170,8 @@
 /* Sponsors Section */
 .sponsors {
   background-color: var(--background-light);
-  padding: 4rem 0;
-  margin-bottom: 4rem;
+  padding: 2rem 0;
+  margin-bottom: 0rem;
 }
 
 .sponsor-tier {
@@ -142,7 +195,7 @@
 .sponsor-card {
   background: var(--white);
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -177,7 +230,7 @@
 
 /* Social Media Section */
 .social-media {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .social-grid {
@@ -245,6 +298,23 @@
     font-size: 2rem;
   }
 
+  .team-picture {
+    padding: 0.25rem 0;
+  }
+
+  .team-image-container {
+    margin-top: 1.5rem;
+  }
+
+  .team-cta {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .team-link {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
   .updates-grid {
     grid-template-columns: 1fr;
   }
@@ -275,6 +345,23 @@
   .hero-actions .btn {
     width: 100%;
     max-width: 200px;
+  }
+
+  .team-picture {
+    padding: 0.25rem 0;
+  }
+
+  .team-image-container {
+    margin-top: 1rem;
+  }
+
+  .team-cta {
+    margin: 0.75rem 0 1rem 0;
+  }
+
+  .team-link {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
   }
 
   .sponsors-grid,

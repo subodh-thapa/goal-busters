@@ -65,6 +65,35 @@
   gap: 2rem;
 }
 
+/* Two-column players list */
+.players-list-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.player-item-compact {
+  background: var(--white);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.player-item-compact:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.player-name-compact {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
 /* Member Cards */
 .member-card {
   background: var(--white);
@@ -229,6 +258,15 @@
   .committee-grid,
   .players-grid {
     grid-template-columns: 1fr;
+  }
+
+  .players-list-two-column {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .player-name-compact {
+    font-size: 1.125rem;
   }
 
   .stats-grid {
