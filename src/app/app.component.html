@@ -1,10 +1,13 @@
 <header class="header">
   <nav class="nav">
     <div class="nav-brand">
-      <app-logo size="small"></app-logo>
+      <div class="logo-container">
+        <img src="assets/goalbuster_transparent_edgebg.png" alt="Goal Busters Logo" class="logo-image">
+      </div>
       <div class="nav-brand-text">
         <h1>Goal Busters</h1>
         <p>Football Club</p>
+        <span class="est-year">est. {{ establishmentYear }}</span>
       </div>
     </div>
     <ul class="nav-links">
@@ -13,6 +16,9 @@
       <li><a routerLink="/team" routerLinkActive="active">Team</a></li>
       <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
     </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-primary">Join the Club</a>
+    </div>
   </nav>
 </header>
 

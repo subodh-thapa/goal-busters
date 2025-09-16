@@ -41,22 +41,66 @@ p {
 /* Logo container styling */
 .nav-brand {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.nav-brand::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--secondary-color), var(--white));
-  transition: width 0.3s ease;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
-.nav-brand:hover::after {
-  width: 100%;
+.logo-image {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-brand-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.nav-brand-text p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1;
+}
+
+.nav-brand-text .est-year {
+  font-size: 0.90rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+}
+
+.nav-cta .btn {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-cta .btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-1px);
 }
 
 /* Navigation link enhancements */

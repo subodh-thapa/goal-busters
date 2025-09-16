@@ -1,46 +1,45 @@
-<!-- Compact Hero Section -->
-<!-- <section class="compact-page-header">
+<!-- Hero Section -->
+<section class="hero-section">
   <div class="container">
-    <h1>Welcome to Goal Busters</h1>
-    <p>Your premier football club since 2020</p>
-    <div class="hero-actions" style="margin-top: 1rem;">
-      <a routerLink="/team" class="btn btn-primary">Meet the Team</a>
-      <a routerLink="/gallery" class="btn btn-outline">View Gallery</a>
-    </div>
-  </div>
-</section> -->
-
-<!-- Team Picture Section -->
-<section class="team-picture">
-  <div class="container">
-    <h4 class="section-title">Goal Busters Family</h4>
-    <p class="section-subtitle">From our internal tournament 2025 - Congratulations to Team Mahadevs for the victory!</p>
-    <div class="team-cta">
-      <a routerLink="/team" class="btn btn-primary team-link">
-        <i class="fas fa-users"></i>
-        Meet Our Team Members
-      </a>
-    </div>
-    <div class="team-image-container">
-      <img src="assets/gb_team.jpg" alt="Goal Busters Team" class="team-image">
-    </div>
-  </div>
-</section>
-
-<!-- Important Updates Section -->
-<section class="important-updates" *ngIf="importantUpdates().length > 0">
-  <div class="container">
-    <h2 class="section-title">Important Updates</h2>
-    <div class="updates-grid">
-      <div class="card update-card" *ngFor="let update of importantUpdates()">
-        <div class="card-header">
-          <h3>{{ update.title }}</h3>
-          <span class="badge badge-danger">Important</span>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Goal Busters Family</h1>
+        <p class="hero-message"><I>Latest: </I>From our internal tournament 2025 — congratulations to Team Mahadevs for the victory!</p>
+        <div class="hero-actions">
+          <a routerLink="/team" class="btn btn-primary">Meet Our Team Members</a>
+          <a routerLink="/gallery" class="btn btn-outline">View Gallery ></a>
         </div>
-        <div class="card-body">
-          <p>{{ update.content }}</p>
-          <div class="update-meta">
-            <span class="text-muted">By {{ update.author }} • {{ update.publishDate | date:'MMM d, y' }}</span>
+        <div class="hero-tags">
+          <span class="tag tag-yellow">Community-first</span>
+          <span class="tag tag-green">Fair Play</span>
+          <span class="tag tag-blue">All Levels Welcome</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="slideshow-container" 
+             (mouseenter)="onSlideshowMouseEnter()" 
+             (mouseleave)="onSlideshowMouseLeave()">
+             <div class="slide-wrapper">
+            <img [src]="currentPhoto.src" [alt]="currentPhoto.alt" class="team-photo">
+          </div>
+          
+          <!-- Navigation arrows -->
+          <button class="slide-nav prev" (click)="previousSlide()" aria-label="Previous photo">
+            <span>‹</span>
+          </button>
+          <button class="slide-nav next" (click)="nextSlide()" aria-label="Next photo">
+            <span>›</span>
+          </button>
+          
+          <!-- Slide indicators -->
+          <div class="slide-indicators">
+            <button 
+              *ngFor="let photo of teamPhotos; let i = index"
+              class="indicator"
+              [class.active]="i === currentSlideIndex"
+              (click)="goToSlide(i)"
+              [attr.aria-label]="'Go to slide ' + (i + 1)"
+            ></button>
           </div>
         </div>
       </div>
@@ -48,23 +47,55 @@
   </div>
 </section>
 
-<!-- Latest Updates Section -->
-<section class="latest-updates">
+<!-- Statistics Section -->
+<section class="statistics-section">
   <div class="container">
-    <h2 class="section-title">Latest News & Updates</h2>
-    <div class="updates-grid">
-      <div class="card update-card" *ngFor="let update of latestUpdates()">
-        <div class="card-header">
-          <h3>{{ update.title }}</h3>
-          <span class="badge" [ngClass]="'badge-' + (update.category === 'match' ? 'success' : update.category === 'training' ? 'primary' : 'secondary')">
-            {{ update.category | titlecase }}
-          </span>
-        </div>
-        <div class="card-body">
-          <p>{{ update.content }}</p>
-          <div class="update-meta">
-            <span class="text-muted">By {{ update.author }} • {{ update.publishDate | date:'MMM d, y' }}</span>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-number">140+</div>
+        <div class="stat-label">Active Members</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-number">{{ yearsActive }}+</div>
+        <div class="stat-label">Years Active</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-number">{{ titlesCount }}</div>
+        <div class="stat-label">Titles Won</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About and Values Section -->
+<section class="about-values-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-card">
+        <h2 class="card-title">About the Club</h2>
+        <p class="card-content">Goal Busters FC is a community-driven football club built by players who love the game and welcome everyone—from beginners to veterans. We organize weekly trainings, friendly matches, and seasonal tournaments across DFW.</p>
+      </div>
+      <div class="content-card">
+        <h2 class="card-title">Latest News & Updates</h2>
+        <div class="updates-list" *ngIf="latestUpdates().length > 0">
+          <div class="update-item" *ngFor="let update of latestUpdates()">
+            <div class="update-header">
+              <h4 class="update-title">{{ update.title }}</h4>
+              <span class="update-badge" [ngClass]="'badge-' + (update.category === 'match' ? 'success' : update.category === 'training' ? 'primary' : 'secondary')">
+                {{ update.category | titlecase }}
+              </span>
+            </div>
+            <p class="update-content">{{ update.content }}</p>
+            <div class="update-meta">
+              <span class="text-muted">By {{ update.author }} • {{ update.publishDate | date:'MMM d, y' }}</span>
+            </div>
           </div>
+        </div>
+        <div class="no-updates" *ngIf="latestUpdates().length === 0">
+          <p>No updates available at the moment.</p>
         </div>
       </div>
     </div>
@@ -72,7 +103,7 @@
 </section>
 
 <!-- Sponsors Section -->
-<section class="sponsors">
+<section class="sponsors-section">
   <div class="container">
     <h2 class="section-title">Our Sponsors</h2>
     <p class="section-subtitle">Thank you to our amazing sponsors who support our team</p>
@@ -124,32 +155,3 @@
   </div>
 </section>
 
-<!-- Social Media Section -->
-<section class="social-media">
-  <div class="container">
-    <h2 class="section-title">Follow Us</h2>
-    <p class="section-subtitle">Stay connected with Goal Busters on social media</p>
-    <div class="social-grid">
-      <a href="https://www.facebook.com/FCGoalbuster" class="social-card facebook">
-        <div class="social-icon">📘</div>
-        <h3>Facebook</h3>
-        <p>Follow us for match updates and team news</p>
-      </a>
-      <a href="https://www.instagram.com/fcgoalbuster" class="social-card instagram">
-        <div class="social-icon">📷</div>
-        <h3>Instagram</h3>
-        <p>See behind-the-scenes photos and videos</p>
-      </a>
-      <!-- <a href="#" class="social-card twitter">
-        <div class="social-icon">🐦</div>
-        <h3>Twitter</h3>
-        <p>Get real-time updates and match commentary</p>
-      </a> -->
-      <a href="https://www.youtube.com/@GoalbustersFC" class="social-card youtube">
-        <div class="social-icon">📺</div>
-        <h3>YouTube</h3>
-        <p>Watch match highlights and training videos</p>
-      </a>
-    </div>
-  </div>
-</section>
