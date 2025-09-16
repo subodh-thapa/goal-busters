@@ -18,7 +18,7 @@ export class SponsorsService {
     {
       id: '2',
       name: 'Your Restruant',
-      logoUrl: 'https://via.placeholder.com/200x100/D4AF37/ffffff?text=Local+Fitness',
+      logoUrl: 'assets/sample logo.png',
       websiteUrl: 'https://localfitness.com',
       description: 'CDelicious food for champions',
       tier: 'gold',
@@ -27,7 +27,7 @@ export class SponsorsService {
     {
       id: '3',
       name: 'Your Restruant',
-      logoUrl: 'https://via.placeholder.com/200x100/D4AF37/ffffff?text=Community+Bank',
+      logoUrl: 'assets/sample logo.png',
       websiteUrl: 'https://communitybank.com',
       description: 'Delicious food for champions',
       tier: 'gold',
@@ -36,7 +36,7 @@ export class SponsorsService {
     {
       id: '4',
       name: 'Your Restruant',
-      logoUrl: 'https://via.placeholder.com/200x100/8B7355/ffffff?text=Pizza+Palace',
+      logoUrl: 'assets/sample logo.png',
       websiteUrl: 'https://pizzapalace.com',
       description: 'Delicious food for champions',
       tier: 'silver',
@@ -45,7 +45,7 @@ export class SponsorsService {
     {
       id: '5',
       name: 'Your Realtor',
-      logoUrl: 'https://via.placeholder.com/200x100/8B7355/ffffff?text=Auto+Repair',
+      logoUrl: 'assets/sample logo.png',
       websiteUrl: 'https://autorepairpro.com',
       description: 'Keeping your home in top condition',
       tier: 'silver',
@@ -54,7 +54,7 @@ export class SponsorsService {
     {
       id: '6',
       name: 'Your Finance Company',
-      logoUrl: 'https://via.placeholder.com/200x100/000000/ffffff?text=Tech+Solutions',
+      logoUrl: 'assets/sample logo.png',
       websiteUrl: 'https://techsolutions.com',
       description: 'Keeping your finances in top condition',
       tier: 'bronze',

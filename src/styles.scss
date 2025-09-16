@@ -261,6 +261,58 @@ body {
   color: var(--white);
 }
 
+/* Ensure sponsor buttons are always visible */
+.sponsor-card .btn,
+.sponsor-card a.btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Override any hover-only visibility rules globally */
+.sponsor-card:not(:hover) .btn,
+.sponsor-card:not(:hover) a.btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Force button visibility in all states globally */
+.sponsor-card .btn,
+.sponsor-card a.btn,
+.sponsor-card:hover .btn,
+.sponsor-card:hover a.btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Nuclear option - global override for all button states */
+.sponsor-card a[class*="btn"],
+.sponsor-card a[class*="btn"]:not(:hover),
+.sponsor-card a[class*="btn"]:hover,
+.sponsor-card a[class*="btn"]:focus,
+.sponsor-card a[class*="btn"]:active,
+.sponsors-section .sponsor-card a[class*="btn"],
+.sponsors-section .sponsor-card a[class*="btn"]:not(:hover),
+.sponsors-section .sponsor-card a[class*="btn"]:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  padding: 0.75rem 1.5rem !important;
+  margin: 10px 0 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
 /* Form styles */
 .form-group {
   margin-bottom: 1.5rem;

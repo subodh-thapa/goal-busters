@@ -108,6 +108,8 @@
     <h2 class="section-title">Our Sponsors</h2>
     <p class="section-subtitle">Thank you to our amazing sponsors who support our team</p>
     
+    
+    
     <!-- Platinum Sponsors -->
     <div class="sponsor-tier" *ngIf="getSponsorsByTier('platinum')().length > 0">
       <h3 class="tier-title">Platinum Sponsors</h3>
@@ -116,7 +118,7 @@
           <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
           <h4>{{ sponsor.name }}</h4>
           <p>{{ sponsor.description }}</p>
-          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl" style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: relative !important; z-index: 9999 !important;">Visit Website</a>
         </div>
       </div>
     </div>
@@ -129,7 +131,7 @@
           <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
           <h4>{{ sponsor.name }}</h4>
           <p>{{ sponsor.description }}</p>
-          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl" style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: relative !important; z-index: 9999 !important;">Visit Website</a>
         </div>
       </div>
     </div>
@@ -142,13 +144,13 @@
           <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
           <h4>{{ sponsor.name }}</h4>
           <p>{{ sponsor.description }}</p>
-          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl" style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: relative !important; z-index: 9999 !important;">Visit Website</a>
         </div>
         <div class="sponsor-card" *ngFor="let sponsor of getSponsorsByTier('bronze')()">
           <img [src]="sponsor.logoUrl" [alt]="sponsor.name" class="sponsor-logo">
           <h4>{{ sponsor.name }}</h4>
           <p>{{ sponsor.description }}</p>
-          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl">Visit Website</a>
+          <a [href]="sponsor.websiteUrl" target="_blank" class="btn btn-outline" *ngIf="sponsor.websiteUrl" style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: relative !important; z-index: 9999 !important;">Visit Website</a>
         </div>
       </div>
     </div>
