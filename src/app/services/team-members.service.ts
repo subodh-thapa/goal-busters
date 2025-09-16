@@ -6,17 +6,6 @@ import { TeamMember, CommitteeMember } from '../models/team-member.model';
 })
 export class TeamMembersService {
   
-  private generateEmail(name: string): string {
-    const nameParts = name.toLowerCase().trim().split(/\s+/);
-    if (nameParts.length >= 2) {
-      const firstName = nameParts[0];
-      const lastName = nameParts[nameParts.length - 1];
-      return `${firstName}.${lastName}@goalbusters.com`;
-    } else if (nameParts.length === 1) {
-      return `${nameParts[0]}@goalbusters.com`;
-    }
-    return 'member@goalbusters.com';
-  }
   private teamMembers = signal<TeamMember[]>([
     {
       id: '1',
@@ -24,8 +13,7 @@ export class TeamMembersService {
       dateOfBirth: '1995-03-15',
       position: 'Goalkeeper',
       isCommittee: false,
-      email: this.generateEmail('Prajwol Phaiju'),
-      phone: '+1-555-1001',
+      jerseyNumber: 1,
       imageUrl: 'assets/default_human_pic.jpg'
     },
     {
@@ -34,8 +22,7 @@ export class TeamMembersService {
       dateOfBirth: '1992-07-22',
       position: 'Defender',
       isCommittee: false,
-      email: this.generateEmail('Anuj Shrestha'),
-      phone: '+1-555-1002',
+      jerseyNumber: 4,
       imageUrl: 'assets/default_human_pic.jpg'
     },
     {
@@ -44,8 +31,7 @@ export class TeamMembersService {
       dateOfBirth: '1998-11-08',
       position: 'Midfielder',
       isCommittee: false,
-      email: this.generateEmail('Bijay Gurung'),
-      phone: '+1-555-1003',
+      jerseyNumber: 8,
       imageUrl: 'assets/default_human_pic.jpg'
     },
     {
@@ -54,8 +40,43 @@ export class TeamMembersService {
       dateOfBirth: '1994-05-12',
       position: 'Forward',
       isCommittee: false,
-      email: this.generateEmail('Asish Chalise'),
-      phone: '+1-555-1004',
+      jerseyNumber: 9,
+      imageUrl: 'assets/default_human_pic.jpg'
+    },
+    {
+      id: '5',
+      name: 'Rajesh Thapa',
+      dateOfBirth: '1996-08-20',
+      position: 'Defender',
+      isCommittee: false,
+      jerseyNumber: 2,
+      imageUrl: 'assets/default_human_pic.jpg'
+    },
+    {
+      id: '6',
+      name: 'Suresh Maharjan',
+      dateOfBirth: '1993-12-05',
+      position: 'Midfielder',
+      isCommittee: false,
+      jerseyNumber: 10,
+      imageUrl: 'assets/default_human_pic.jpg'
+    },
+    {
+      id: '7',
+      name: 'Bikash Gurung',
+      dateOfBirth: '1997-04-18',
+      position: 'Forward',
+      isCommittee: false,
+      jerseyNumber: 11,
+      imageUrl: 'assets/default_human_pic.jpg'
+    },
+    {
+      id: '8',
+      name: 'Niraj Shrestha',
+      dateOfBirth: '1991-09-30',
+      position: 'Defender',
+      isCommittee: false,
+      jerseyNumber: 3,
       imageUrl: 'assets/default_human_pic.jpg'
     }
   ]);
@@ -67,7 +88,6 @@ export class TeamMembersService {
       dateOfBirth: '1988-09-14',
       isCommittee: true,
       role: 'President',
-      email: this.generateEmail('Anup Tamrakar'),
       phone: '+1-555-0123',
       imageUrl: 'assets/default_human_pic.jpg'
     },
@@ -78,7 +98,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Vice President',
-      email: this.generateEmail('Purak  Khadka'),
       phone: '+1-555-0125',
       imageUrl: 'assets/default_human_pic.jpg'
     },
@@ -89,7 +108,6 @@ export class TeamMembersService {
       position: 'Defender',
       isCommittee: true,
       role: 'Advisor',
-      email: this.generateEmail('Suhang Subba'),
       phone: '+1-555-0124',
       imageUrl: 'assets/team_members/suhang_subba.jpeg'
     },
@@ -100,7 +118,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Team Manager',
-      email: this.generateEmail('Parashar Poudyal'),
       phone: '+1-555-0125',
       imageUrl: 'assets/team_members/parashar.jpg'
     },
@@ -111,7 +128,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Internal Tournament Coordinator',
-      email: this.generateEmail('Prajwol Pathak'),
       phone: '+1-555-0125',
       imageUrl: 'assets/team_members/prajwol_pathak.jpg'
     },
@@ -122,7 +138,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Treasurer',
-      email: this.generateEmail('Suhav Ranabhat'),
       phone: '+1-555-0125',
       imageUrl: 'assets/default_human_pic.jpg'
     },
@@ -133,7 +148,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Advisor',
-      email: this.generateEmail('Kancha Shrestha'),
       phone: '+1-555-0125',
       imageUrl: 'assets/default_human_pic.jpg'
     },
@@ -144,7 +158,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Event Coordinator and Team Manager',
-      email: this.generateEmail('Phurba Lama'),
       phone: '+1-555-0125',
       imageUrl: 'assets/default_human_pic.jpg'
     },
@@ -155,7 +168,6 @@ export class TeamMembersService {
       position: 'Forward',
       isCommittee: true,
       role: 'Internal Tournament Coordinator',
-      email: this.generateEmail('Subodh Thapa'),
       phone: '+1-555-0125',
       imageUrl: 'assets/default_human_pic.jpg'
     }

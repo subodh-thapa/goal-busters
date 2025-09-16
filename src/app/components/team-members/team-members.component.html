@@ -7,12 +7,52 @@
       <div class="team-stats-inline">
         <span class="stat-inline">{{ teamMembers().length }} Players</span>
         <span class="stat-inline">{{ committeeMembers().length }} Board Members</span>
-        <span class="stat-inline">Est. 2012</span>
       </div>
     </div>
 
+    <!-- Toggle Button -->
+    <div class="toggle-container">
+      <button 
+        class="toggle-btn" 
+        [class.active]="!showPlayers()" 
+        (click)="toggleView()">
+        Board Members
+      </button>
+      <button 
+      class="toggle-btn" 
+      [class.active]="showPlayers()" 
+      (click)="toggleView()">
+      Players
+    </button>
+    </div>
+
+    <!-- Players Section -->
+    <section class="members-section" *ngIf="showPlayers()">
+      <div class="container">
+        <h2 class="section-title">Our Players</h2>
+        <p class="section-subtitle">Our talented players who represent Goal Busters on the field</p>
+        
+        <div class="players-grid">
+          <div class="member-card player-card" *ngFor="let member of teamMembers()">
+            <div class="member-image">
+              <img [src]="member.imageUrl || 'assets/default_human_pic.jpg'" [alt]="member.name" class="img-circle">
+            </div>
+            <div class="member-info">
+              <h3>{{ member.name }}</h3>
+              <div class="member-contact">
+                <p class="contact-item">
+                  <span class="contact-icon">📧</span>
+                  <a [href]="'mailto:' + getDisplayEmail(member)">{{ getDisplayEmail(member) }}</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Board Members Section -->
-    <section class="committee-section">
+    <section class="members-section" *ngIf="!showPlayers()">
       <div class="container">
         <h2 class="section-title">Board Members</h2>
         <p class="section-subtitle">The volunteers who make Goal Busters possible</p>
@@ -25,10 +65,10 @@
             <div class="member-info">
               <h3>{{ member.name }}</h3>
               <p class="member-role" *ngIf="member.role">Role: {{ member.role }}</p>
-              <div class="member-contact" *ngIf="member.email || member.phone">
-                <p *ngIf="member.email" class="contact-item">
+              <div class="member-contact" *ngIf="getDisplayEmail(member) || member.phone">
+                <p class="contact-item">
                   <span class="contact-icon">📧</span>
-                  <a [href]="'mailto:' + member.email">{{ member.email }}</a>
+                  <a [href]="'mailto:' + getDisplayEmail(member)">{{ getDisplayEmail(member) }}</a>
                 </p>
                 <p *ngIf="member.phone" class="contact-item">
                   <span class="contact-icon">📞</span>
@@ -36,20 +76,6 @@
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Players Section -->
-    <section class="players-section">
-      <div class="container">
-        <h2 class="section-title">Our Players</h2>
-        <p class="section-subtitle">Our talented players who represent Goal Busters on the field</p>
-        
-        <div class="players-list-two-column">
-          <div class="player-item-compact" *ngFor="let member of teamMembers()">
-            <span class="player-name-compact">{{ member.name }}</span>
           </div>
         </div>
       </div>
