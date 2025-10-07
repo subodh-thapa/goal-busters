@@ -17,10 +17,10 @@ export class UpdatesService {
     },
     {
       id: '2',
-      title: 'Dallas Gurkha Cup 2025',
-      content: 'Goal Busters will be participating in the Dallas Gurkha Cup 2025. The tournament will be held from August 23rd to August 25th at the Dallas. We are looking forward to the tournament.',
+      title: '🏆 Dallas Gurkha Cup 2025 Winners',
+      content: 'History made! Your Goal Busters FC have officially claimed the title of Gurkha Cup Champions, showcasing unstoppable teamwork, spirit, and skill on the field. From fierce tackles to flawless goals — the teams dedication has paid off in style',
       publishDate: new Date('2025-09-10'),
-      category: 'training',
+      category: 'match',
       isImportant: false
     },
     {
