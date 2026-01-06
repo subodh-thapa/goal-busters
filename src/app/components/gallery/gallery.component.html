@@ -6,69 +6,85 @@
   </div>
 </section>
 
-<!-- Albums Grid -->
-<section class="albums-section" *ngIf="!selectedAlbum">
-  <div class="container">
-    <h2 class="section-title">Photo Albums</h2>
-    <p class="section-subtitle">Browse our collection of photos organized by events and seasons</p>
-    
-    <div class="albums-grid">
-      <div class="album-card" *ngFor="let album of albums()" (click)="selectAlbum(album)">
-        <div class="album-cover">
-          <img [src]="album.coverImageUrl" [alt]="album.title" class="img-responsive">
-          <div class="album-overlay">
-            <div class="album-info">
-              <h3>{{ album.title }}</h3>
-              <p>{{ album.description }}</p>
-              <div class="album-meta">
-                <span class="photo-count">{{ album.photos.length }} photos</span>
-                <span class="album-date" *ngIf="album.eventDate">{{ album.eventDate | date:'MMM d, y' }}</span>
+<ng-container *ngIf="galleryEnabled(); else wip">
+  <section class="albums-section" *ngIf="!selectedAlbum">
+    <div class="container">
+      <h2 class="section-title">Photo Albums</h2>
+      <p class="section-subtitle">Browse our collection of photos organized by events and seasons</p>
+      
+      <div class="albums-grid">
+        <div class="album-card" *ngFor="let album of albums()" (click)="selectAlbum(album)">
+          <div class="album-cover">
+            <img [src]="album.coverImageUrl" [alt]="album.title" class="img-responsive">
+            <div class="album-overlay">
+              <div class="album-info">
+                <h3>{{ album.title }}</h3>
+                <p>{{ album.description }}</p>
+                <div class="album-meta">
+                  <span class="photo-count">{{ album.photos.length }} photos</span>
+                  <span class="album-date" *ngIf="album.eventDate">{{ album.eventDate | date:'MMM d, y' }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Album View -->
-<section class="album-view" *ngIf="selectedAlbum && !selectedPhoto">
-  <div class="container">
-    <div class="album-header">
-      <button class="btn btn-outline" (click)="closeAlbum()">
-        ← Back to Albums
-      </button>
-      <h2>{{ selectedAlbum.title }}</h2>
-      <p>{{ selectedAlbum.description }}</p>
+  </section>
+  
+  <!-- Album View -->
+  <section class="album-view" *ngIf="selectedAlbum && !selectedPhoto">
+    <div class="container">
+      <div class="album-header">
+        <button class="btn btn-outline" (click)="closeAlbum()">
+          ← Back to Albums
+        </button>
+        <h2>{{ selectedAlbum.title }}</h2>
+        <p>{{ selectedAlbum.description }}</p>
+      </div>
+      
+      <div class="photos-grid">
+        <div class="photo-card" *ngFor="let photo of selectedAlbum.photos" (click)="selectPhoto(photo)">
+          <img [src]="photo.imageUrl" [alt]="photo.title" class="img-responsive">
+          <div class="photo-overlay">
+            <h4>{{ photo.title }}</h4>
+            <p *ngIf="photo.description">{{ photo.description }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="photos-grid">
-      <div class="photo-card" *ngFor="let photo of selectedAlbum.photos" (click)="selectPhoto(photo)">
-        <img [src]="photo.imageUrl" [alt]="photo.title" class="img-responsive">
-        <div class="photo-overlay">
-          <h4>{{ photo.title }}</h4>
-          <p *ngIf="photo.description">{{ photo.description }}</p>
+  </section>
+  
+  <!-- Photo Modal -->
+  <div class="photo-modal" *ngIf="selectedPhoto" (click)="closePhoto()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closePhoto()">×</button>
+      <img [src]="selectedPhoto.imageUrl" [alt]="selectedPhoto.title" class="modal-image">
+      <div class="modal-info">
+        <h3>{{ selectedPhoto.title }}</h3>
+        <p *ngIf="selectedPhoto.description">{{ selectedPhoto.description }}</p>
+        <div class="photo-meta">
+          <span class="upload-date">{{ selectedPhoto.uploadDate | date:'MMM d, y' }}</span>
+          <div class="photo-tags" *ngIf="selectedPhoto.tags && selectedPhoto.tags.length > 0">
+            <span class="tag" *ngFor="let tag of selectedPhoto.tags">{{ tag }}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- Photo Modal -->
-<div class="photo-modal" *ngIf="selectedPhoto" (click)="closePhoto()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="closePhoto()">×</button>
-    <img [src]="selectedPhoto.imageUrl" [alt]="selectedPhoto.title" class="modal-image">
-    <div class="modal-info">
-      <h3>{{ selectedPhoto.title }}</h3>
-      <p *ngIf="selectedPhoto.description">{{ selectedPhoto.description }}</p>
-      <div class="photo-meta">
-        <span class="upload-date">{{ selectedPhoto.uploadDate | date:'MMM d, y' }}</span>
-        <div class="photo-tags" *ngIf="selectedPhoto.tags && selectedPhoto.tags.length > 0">
-          <span class="tag" *ngFor="let tag of selectedPhoto.tags">{{ tag }}</span>
-        </div>
+</ng-container>
+<ng-template #wip>
+  <section class="wip-section">
+    <div class="container">
+      <div class="wip-sign" style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+        <span style="font-size:2rem; color:orange;">🚧</span>
+        <h2 style="margin:0;">Gallery - Work In Progress</h2>
+        <span style="font-size:2rem; color:orange;">🚧</span>
       </div>
+      <p>Our photo gallery is coming soon! Stay tuned for exciting updates and amazing moments from Goal Busters......</p>
     </div>
-  </div>
-</div>
+  </section>
+</ng-template>
+
+<!-- Albums Grid -->
+

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryService } from '../../services/gallery.service';
 import { Album, Photo } from '../../models/gallery.model';
@@ -17,6 +17,7 @@ export class GalleryComponent {
   albums = this.galleryService.getAlbums();
   selectedAlbum: Album | null = null;
   selectedPhoto: Photo | null = null;
+  galleryEnabled = signal(false);
 
   selectAlbum(album: Album) {
     this.selectedAlbum = album;
