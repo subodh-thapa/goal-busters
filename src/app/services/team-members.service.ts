@@ -89,7 +89,7 @@ export class TeamMembersService {
       isCommittee: true,
       role: 'President',
       phone: '+1-555-0123',
-      imageUrl: 'assets/default_human_pic.jpg'
+      imageUrl: 'assets/team_members/anup_tam.jpg'
     },
     {
       id: 'c6',
