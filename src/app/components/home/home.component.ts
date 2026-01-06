@@ -20,16 +20,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   private sponsorsService = inject(SponsorsService);
 
   // Club titles count
-  readonly titlesCount = 8;
+  readonly titlesCount = 4;
 
   // Team photos for slideshow
   teamPhotos = [
+    { src: 'assets/Cup_winner_GC.png', alt: 'Gorkha Cup 2025 Winners' },
+    { src: 'assets/ERFC_35_RunnerUp.png', alt: 'ERFC Cup 2025 Runner Up' },
     { src: 'assets/gb_team.jpg', alt: 'Goal Busters team group photo on the field' },
     { src: 'assets/team_pic_1.jpg', alt: 'Goal Busters team photo 1' },
     { src: 'assets/team_pic_2.jpg', alt: 'Goal Busters team photo 2' }
   ];
 
   currentSlideIndex = 0;
+  
   private autoSlideInterval: number | null = null;
   private readonly autoSlideDelay = 1500; // 2 seconds
 

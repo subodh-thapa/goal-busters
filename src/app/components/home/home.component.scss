@@ -602,6 +602,19 @@
   }
 }
 
+/* Responsive Design - Mobile Medium */
+@media (max-width: 600px) {
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .slide-indicators {
+    bottom: 10px;
+    gap: 5px;
+  }
+}
+
 /* Responsive Design - Mobile Small */
 @media (max-width: 480px) {
   .hero-section {
@@ -716,14 +729,22 @@
   }
 
   .indicator {
-    width: 10px;
-    height: 10px;
-    margin: 0 3px;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+  }
+
+  .indicator:hover {
+    transform: scale(1.4);
+  }
+
+  .indicator.active {
+    transform: scale(1.5);
   }
 
   .slide-indicators {
-    bottom: 12px;
-    gap: 6px;
+    bottom: 10px;
+    gap: 4px;
   }
 
   .update-item {
@@ -1149,9 +1170,8 @@ html {
   }
 
   .indicator {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 16px;
+    width: 11px;
+    height: 11px;
     touch-action: manipulation;
   }
 
