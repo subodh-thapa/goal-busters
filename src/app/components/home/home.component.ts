@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private sponsorsService = inject(SponsorsService);
 
   // Club titles count
-  readonly titlesCount = 8;
+  readonly titlesCount = 4;
 
   // Team photos for slideshow
   teamPhotos = [

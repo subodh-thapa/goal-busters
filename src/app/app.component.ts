@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'Goal Busters';
   
   // Club establishment year - static so it can be accessed from other components
-  static readonly ESTABLISHMENT_YEAR = 2015;
+  static readonly ESTABLISHMENT_YEAR = 2012;
   
   // Get establishment year for template access
   get establishmentYear(): number {

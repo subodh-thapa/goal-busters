@@ -149,17 +149,17 @@ export class TeamMembersService {
       isCommittee: true,
       role: 'Advisor',
       phone: '+1-555-0125',
-      imageUrl: 'assets/default_human_pic.jpg'
+      imageUrl: 'assets/team_members/kancha.jpg'
     },
     {
       id: 'c5',
-      name: 'Phurba Lama',
+      name: 'Fuba Lama',
       dateOfBirth: '1990-04-28',
       position: 'Forward',
       isCommittee: true,
       role: 'Event Coordinator and Team Manager',
       phone: '+1-555-0125',
-      imageUrl: 'assets/default_human_pic.jpg'
+      imageUrl: 'assets/team_members/fuba.jpg'
     },
     {
       id: 'c7',
