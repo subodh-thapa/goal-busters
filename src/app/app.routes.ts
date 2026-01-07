@@ -8,6 +8,6 @@ export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Goal Busters - Home' },
   { path: 'gallery', component: GalleryComponent, title: 'Goal Busters - Gallery' },
   { path: 'team', component: TeamMembersComponent, title: 'Goal Busters - Team Members' },
-  { path: 'admin', component: AdminComponent, title: 'Goal Busters - Admin' },
+  // { path: 'admin', component: AdminComponent, title: 'Goal Busters - Admin' },
   { path: '**', redirectTo: '' }
 ];
